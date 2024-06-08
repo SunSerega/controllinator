@@ -182,7 +182,7 @@ function contraption:on_pre_surface_destroyed(surface)
     local old_entities, new_entities = self.entities, {}
     self.entities = new_entities
     for _, entity in ipairs(old_entities) do
-        if entity.surface ~= surface then
+        if entity.valid and entity.surface ~= surface then
             new_entities[#new_entities + 1] = entity
         end
     end
